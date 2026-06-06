@@ -72,7 +72,13 @@
             overflow: hidden;
             box-shadow: 0 4px 20px rgba(0,0,0,0.02);
         }
-        .video-preview {
+        .video-preview-img {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            display: block;
+        }
+        .video-preview-placeholder {
             width: 100%;
             aspect-ratio: 16 / 9;
             background: #f4f4f7;
@@ -81,7 +87,6 @@
             justify-content: center;
             color: #8e8e93;
             font-size: 2rem;
-            position: relative;
             background-image: linear-gradient(135deg, #e2e2e7 0%, #f4f4f7 100%);
         }
         .video-info {
@@ -152,7 +157,8 @@
 
             <!-- VIDEO CARD 1: Velocity Overlay -->
             <div class="video-card">
-                <div class="video-preview">🎬</div>
+                <!-- Thumbnail Image Linked Properly -->
+                <img src="velocity.png" alt="Viral Velocity Particle Overlay" class="video-preview-img">
                 <div class="video-info">
                     <h3>Viral Velocity Particle Overlay</h3>
                     <p>Smooth slow-motion particles for CapCut and Alight Motion edits. Use 'Screen' blend mode.</p>
@@ -172,7 +178,7 @@
 
             <!-- VIDEO CARD 2: Slow Motion Sky -->
             <div class="video-card">
-                <div class="video-preview">🌌</div>
+                <div class="video-preview-placeholder">🌌</div>
                 <div class="video-info">
                     <h3>Aesthetic Cinematic Sky Background</h3>
                     <p>Perfect moving clouds and neon sky for gaming montage background switching.</p>
@@ -184,22 +190,6 @@
                         </div>
                         <div class="download-row">
                             <span class="quality-label">4K (Ultra HD)</span>
-                            <a href="YOUR_LINK_HERE" class="dl-btn">Download</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- VIDEO CARD 3: Glow Transition -->
-            <div class="video-card">
-                <div class="video-preview">⚡</div>
-                <div class="video-info">
-                    <h3>Neon Glow Transition Effect</h3>
-                    <p>High-energy flash transition with built-in sound effect for fast pacing.</p>
-                    
-                    <div class="download-section">
-                        <div class="download-row">
-                            <span class="quality-label">1080p (Full HD)</span>
                             <a href="YOUR_LINK_HERE" class="dl-btn">Download</a>
                         </div>
                     </div>
