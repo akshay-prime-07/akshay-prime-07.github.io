@@ -3,208 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Particle Overlays - AKSHAY PRIME</title>
+    <title>Velocity Video Preview</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-        }
         body {
-            background-color: #ffffff;
-            color: #111111;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
             padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .wrapper {
-            width: 100%;
-            max-width: 550px;
-        }
-        /* Header Section */
-        .header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 15px 0 30px 0;
-        }
-        .back-btn {
-            text-decoration: none;
-            color: #2ca599;
-            font-size: 1.4rem;
-            font-weight: bold;
-            line-height: 1;
-        }
-        .logo {
-            font-size: 1.3rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            font-family: 'Times New Roman', Times, serif;
-            letter-spacing: -0.5px;
-        }
-        .logo .teal { color: #2ca599; }
-
-        /* Page Title */
-        .page-title {
-            font-family: 'Times New Roman', Times, Georgia, serif;
-            font-size: 1.9rem;
-            margin-bottom: 8px;
-            color: #111;
-        }
-        .page-subtitle {
-            font-size: 0.9rem;
-            color: #636366;
-            margin-bottom: 25px;
         }
 
-        /* 2-Column Grid Layout */
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            width: 100%;
-        }
-        .asset-card {
-            background: #ffffff;
-            border: 1px solid #efeff4;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.01);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .asset-thumb {
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            object-fit: cover;
-            display: block;
-            background: #f4f4f7;
-        }
-        .asset-info {
-            padding: 12px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-            justify-content: space-between;
-        }
-        .asset-info h3 {
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: #1c1c1e;
-            margin-bottom: 4px;
-            line-height: 1.2;
-        }
-        .asset-info p {
-            font-size: 0.75rem;
-            color: #636366;
-            margin-bottom: 12px;
-            line-height: 1.3;
-        }
-
-        /* Premium Download Button with Tap/Click Animation */
-        .download-btn {
-            display: block;
-            width: 100%;
+        .container {
             text-align: center;
-            background: #1c1c1e; /* Initial Premium Dark color */
-            color: #ffffff;
-            padding: 10px 12px;
-            border-radius: 8px;
-            font-size: 0.8rem;
-            font-weight: 700;
+            background-color: #1e1e1e;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            /* Isse preview ka container bada dikhega */
+            max-width: 850px; 
+            width: 100%;
+        }
+
+        h1 {
+            color: #ff4757;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .video-wrapper {
+            margin-bottom: 25px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid #333;
+        }
+
+        /* Video ka bada size set kiya hai yahan */
+        video {
+            width: 100%;
+            max-width: 800px;
+            display: block;
+            height: auto;
+        }
+
+        .btn-download {
+            display: inline-block;
+            background-color: #2ed573;
+            color: white;
             text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            border: 1px solid rgba(44, 165, 153, 0.4);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); /* Smooth state change transition */
-            cursor: pointer;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(46, 213, 115, 0.4);
         }
 
-        /* Hover State: Color changes to glowing brand teal */
-        .download-btn:hover {
-            background: linear-gradient(135deg, #2ca599, #1e8277);
-            border-color: transparent;
-            box-shadow: 0 6px 16px rgba(44, 165, 153, 0.3);
-            color: #ffffff;
+        .btn-download:hover {
+            background-color: #26af5f;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(46, 213, 115, 0.6);
         }
 
-        /* Tap / Active State: Micro-interaction pop animation + color flip */
-        .download-btn:active {
-            transform: scale(0.93); /* Shrink animation on click/tap */
-            background: #0f0f11; /* Changes to deep dark black instantly when tapped */
-            border-color: #2ca599;
-            box-shadow: 0 2px 6px rgba(44, 165, 153, 0.2);
+        .btn-download:active {
+            transform: translateY(-1px);
         }
     </style>
 </head>
 <body>
-    <div class="wrapper">
-        <!-- Header -->
-        <div class="header">
-            <a href="videos.html" class="back-btn">←</a>
-            <div class="logo">AKSHAY <span class="teal">PRIME</span></div>
+
+    <div class="container">
+        <h1>Velocity Video Preview</h1>
+        
+        <div class="video-wrapper">
+            <video controls poster="">
+                <source src="list/dust.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
 
-        <h2 class="page-title">Particle Overlays</h2>
-        <p class="page-subtitle">Ultra realistic 4K moving particles, dust, and glow elements.</p>
-
-        <!-- 2-Column Grid -->
-        <div class="grid-container">
-
-            <!-- CARD 1 -->
-            <div class="asset-card">
-                <img src="particle1.png" alt="Velocity Dust" class="asset-thumb">
-                <div class="asset-info">
-                    <div>
-                        <h3>Velocity Dust</h3>
-                        <p>Slow motion cinematic micro particles.</p>
-                    </div>
-                    <a href="p1.html" class="download-btn">Download</a>
-                </div>
-            </div>
-
-            <!-- CARD 2 -->
-            <div class="asset-card">
-                <img src="particle2.png" alt="Neon Fireflies" class="asset-thumb">
-                <div class="asset-info">
-                    <div>
-                        <h3>Neon Fireflies</h3>
-                        <p>Glowing green & cyan floating bokeh light gems.</p>
-                    </div>
-                    <a href="p2.html" class="download-btn">Download</a>
-                </div>
-            </div>
-
-            <!-- CARD 3 -->
-            <div class="asset-card">
-                <img src="particle3.png" alt="Anime Speed Lines" class="asset-thumb">
-                <div class="asset-info">
-                    <div>
-                        <h3>Anime Lines</h3>
-                        <p>High speed fast action thrill action overlay.</p>
-                    </div>
-                    <a href="p3.html" class="download-btn">Download</a>
-                </div>
-            </div>
-
-            <!-- CARD 4 -->
-            <div class="asset-card">
-                <img src="particle4.png" alt="Glitch Sparks" class="asset-thumb">
-                <div class="asset-info">
-                    <div>
-                        <h3>Glitch Sparks</h3>
-                        <p>Futuristic cyber punk electric neon sparks.</p>
-                    </div>
-                    <a href="p4.html" class="download-btn">Download</a>
-                </div>
-            </div>
-
-        </div>
+        <a href="list/dust.mp4" download="dust.mp4" class="btn-download">
+            📥 Download Video
+        </a>
     </div>
+
 </body>
-  </html>
-  
+</html>
