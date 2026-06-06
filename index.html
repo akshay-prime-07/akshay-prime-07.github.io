@@ -23,7 +23,6 @@
             width: 100%;
             max-width: 550px;
         }
-        /* Header Logo Section */
         .header {
             display: flex;
             justify-content: space-between;
@@ -37,12 +36,8 @@
             text-transform: uppercase;
             font-family: 'Times New Roman', Times, serif;
         }
-        .logo .black {
-            color: #111111;
-        }
-        .logo .teal {
-            color: #2ca599;
-        }
+        .logo .black { color: #111111; }
+        .logo .teal { color: #2ca599; }
         .menu-icon {
             display: flex;
             flex-direction: column;
@@ -58,7 +53,6 @@
             background-color: #2ca599;
             border-radius: 2px;
         }
-        /* Hero Heading */
         .hero {
             text-align: center;
             margin: 25px 0;
@@ -70,7 +64,6 @@
             line-height: 1.15;
             color: #111111;
         }
-        /* Modern Search Bar */
         .search-container {
             display: flex;
             align-items: center;
@@ -114,7 +107,6 @@
             color: #8e8e93;
             cursor: pointer;
         }
-        /* Popular Tags */
         .popular-tags {
             text-align: center;
             font-size: 0.85rem;
@@ -125,7 +117,6 @@
             color: #1c1c1e;
             font-weight: 600;
         }
-        /* Features List/Grid */
         .features-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -143,6 +134,8 @@
             display: flex;
             align-items: center;
             gap: 16px;
+            text-decoration: none;
+            color: inherit;
         }
         .feature-icon {
             font-size: 2.2rem;
@@ -160,7 +153,6 @@
             color: #8e8e93;
             margin-top: 1px;
         }
-        /* Categories Header */
         .section-header {
             display: flex;
             justify-content: space-between;
@@ -182,7 +174,6 @@
             font-weight: 600;
             text-decoration: none;
         }
-        /* Category Image Cards */
         .image-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -214,7 +205,6 @@
 </head>
 <body>
     <div class="wrapper">
-        <!-- Header -->
         <div class="header">
             <div class="logo"><span class="black">AKSHAY</span> <span class="teal">PRIME</span></div>
             <div class="menu-icon">
@@ -224,32 +214,29 @@
             </div>
         </div>
 
-        <!-- Hero Section -->
         <div class="hero">
             <h1>Free assets for your next video project</h1>
         </div>
 
-        <!-- Search Bar -->
         <div class="search-container">
             <div class="search-dropdown">Videos</div>
             <input type="text" class="search-input" placeholder="Search...">
             <div class="search-icon">🔍</div>
         </div>
 
-        <!-- Popular Tags -->
         <div class="popular-tags">
             Popular: <span>Transitions</span>, Background Videos, Easter
         </div>
 
-        <!-- Features Grid -->
         <div class="features-grid">
-            <div class="feature-item">
+            <!-- Yeh link ab videos.html par le jayegi -->
+            <a href="videos.html" class="feature-item">
                 <span class="feature-icon">📹</span>
                 <div class="feature-text">
                     <h3>Stock Video</h3>
                     <p>46000+ clips</p>
                 </div>
-            </div>
+            </a>
             <div class="feature-item">
                 <span class="feature-icon">🎵</span>
                 <div class="feature-text">
@@ -273,13 +260,11 @@
             </div>
         </div>
 
-        <!-- Section Header -->
         <div class="section-header">
             <h2>Popular video categories</h2>
             <a href="#" class="view-all-btn">View all</a>
         </div>
 
-        <!-- Image Grid -->
         <div class="image-grid">
             <div class="image-card">
                 <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80" alt="Nature">
