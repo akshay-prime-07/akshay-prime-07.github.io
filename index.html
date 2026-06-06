@@ -9,99 +9,136 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
         body {
-            background-color: #0d0e12;
-            color: #ffffff;
-            text-align: center;
+            background-color: #fffdfa;
+            color: #1e1e24;
             padding: 20px;
         }
-        header {
-            margin: 40px 0;
-        }
-        header h1 {
-            font-size: 2.5rem;
-            color: #ff3e3e;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-        }
-        header p {
-            color: #a0a5b5;
-            font-size: 1rem;
-        }
-        .container {
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
             max-width: 600px;
             margin: 0 auto;
         }
-        .card {
-            background: #161822;
-            border: 1px solid #25293a;
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: #111;
+        }
+        .logo span {
+            color: #ff4757;
+        }
+        .hero {
+            text-align: center;
+            max-width: 500px;
+            margin: 40px auto 25px auto;
+        }
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #1c1c1e;
+        }
+        .search-box {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto 40px auto;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 16px 20px;
+            border: 2px solid #e2e2e7;
+            border-radius: 10px;
+            font-size: 1rem;
+            outline: none;
+            background: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .asset-card {
+            background: #ffffff;
+            border: 1px solid #efeff4;
             border-radius: 12px;
             padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-        }
-        .card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: #00ffcc;
-        }
-        .card p {
-            color: #bcbfc8;
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-        }
-        .btn {
-            display: inline-block;
-            background: #ff3e3e;
-            color: white;
-            padding: 10px 20px;
+            text-align: left;
             text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            transition: 0.3s;
+            color: inherit;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.01);
+            transition: 0.2s;
         }
-        .btn:hover {
-            background: #e03232;
-            transform: scale(1.05);
+        .asset-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.04);
+        }
+        .icon {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .asset-card h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: #1c1c1e;
+        }
+        .asset-card p {
+            font-size: 0.8rem;
+            color: #6e6e73;
         }
         footer {
-            margin-top: 50px;
-            color: #575c6c;
+            text-align: center;
+            margin-top: 80px;
+            color: #8e8e93;
             font-size: 0.8rem;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>AKSHAY PRIME</h1>
-        <p>Premium Editing Assets, XML Presets & Useful APKs</p>
-    </header>
+    <div class="navbar">
+        <div class="logo">akshay<span>prime</span></div>
+    </div>
 
-    <div class="container">
-        <!-- Asset 1 -->
-        <div class="card">
-            <h3>Trending XML Presets</h3>
-            <p>Get the latest Alight Motion & CapCut XML editing presets for free.</p>
-            <a href="#" class="btn">Download XML</a>
-        </div>
+    <div class="hero">
+        <h1>Free assets for your next video project</h1>
+    </div>
 
-        <!-- Asset 2 -->
-        <div class="card">
+    <div class="search-box">
+        <input type="text" placeholder="Search XML presets, templates, APKs...">
+    </div>
+
+    <div class="grid-container">
+        <a href="#" class="asset-card">
+            <span class="icon">📊</span>
+            <h3>XML Presets</h3>
+            <p>Alight Motion & CapCut</p>
+        </a>
+        <a href="#" class="asset-card">
+            <span class="icon">🎬</span>
             <h3>Video Templates</h3>
-            <p>High-quality templates and overlays to make your videos viral.</p>
-            <a href="#" class="btn">Get Templates</a>
-        </div>
-
-        <!-- Asset 3 -->
-        <div class="card">
-            <h3>Premium Pro APKs</h3>
-            <p>Safe and updated versions of top editing apps for creators.</p>
-            <a href="#" class="btn">Download APK</a>
-        </div>
+            <p>Viral overlays & transitions</p>
+        </a>
+        <a href="#" class="asset-card">
+            <span class="icon">🤖</span>
+            <h3>Premium APKs</h3>
+            <p>Safe & updated tools</p>
+        </a>
+        <a href="#" class="asset-card">
+            <span class="icon">🎵</span>
+            <h3>Sound Effects</h3>
+            <p>Trending audio clips</p>
+        </a>
     </div>
 
     <footer>
