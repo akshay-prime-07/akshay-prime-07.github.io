@@ -9,141 +9,287 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
         }
         body {
-            background-color: #fffdfa;
-            color: #1e1e24;
+            background-color: #ffffff;
+            color: #111111;
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        .navbar {
+        .wrapper {
+            width: 100%;
+            max-width: 550px;
+        }
+        /* Header Logo Section */
+        .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
-            max-width: 600px;
-            margin: 0 auto;
+            padding: 15px 0 35px 0;
         }
         .logo {
             font-size: 1.4rem;
-            font-weight: 800;
+            font-weight: 900;
             letter-spacing: -0.5px;
-            color: #111;
+            text-transform: uppercase;
+            font-family: 'Times New Roman', Times, serif;
         }
-        .logo span {
-            color: #ff4757;
+        .logo .black {
+            color: #111111;
         }
+        .logo .teal {
+            color: #2ca599;
+        }
+        .menu-icon {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 22px;
+            height: 15px;
+            cursor: pointer;
+        }
+        .menu-icon span {
+            display: block;
+            height: 2.5px;
+            width: 100%;
+            background-color: #2ca599;
+            border-radius: 2px;
+        }
+        /* Hero Heading */
         .hero {
             text-align: center;
-            max-width: 500px;
-            margin: 40px auto 25px auto;
+            margin: 25px 0;
         }
         .hero h1 {
-            font-size: 2.2rem;
+            font-family: 'Times New Roman', Times, Georgia, serif;
+            font-size: 2.3rem;
             font-weight: 700;
-            line-height: 1.2;
+            line-height: 1.15;
+            color: #111111;
+        }
+        /* Modern Search Bar */
+        .search-container {
+            display: flex;
+            align-items: center;
+            border: 1px solid #e2e2e8;
+            border-radius: 12px;
+            padding: 14px 18px;
+            margin: 20px 0 15px 0;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+        .search-dropdown {
+            font-size: 0.95rem;
+            color: #2c2c2e;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding-right: 14px;
+            border-right: 1px solid #e5e5ea;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        .search-dropdown::after {
+            content: ' ';
+            border: solid #666;
+            border-width: 0 1.5px 1.5px 0;
+            display: inline-block;
+            padding: 2.5px;
+            transform: rotate(45deg);
+            margin-bottom: 3px;
+        }
+        .search-input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 0 15px;
+            font-size: 1rem;
+            color: #111;
+        }
+        .search-icon {
+            font-size: 1.1rem;
+            color: #8e8e93;
+            cursor: pointer;
+        }
+        /* Popular Tags */
+        .popular-tags {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #636366;
+            margin-bottom: 45px;
+        }
+        .popular-tags span {
+            color: #1c1c1e;
+            font-weight: 600;
+        }
+        /* Features List/Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 22px;
+            margin-bottom: 45px;
+            padding-left: 5px;
+        }
+        @media (min-width: 400px) {
+            .features-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 25px;
+            }
+        }
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .feature-icon {
+            font-size: 2.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .feature-text h3 {
+            font-size: 1rem;
+            font-weight: 700;
             color: #1c1c1e;
         }
-        .search-box {
-            position: relative;
-            max-width: 500px;
-            margin: 0 auto 40px auto;
+        .feature-text p {
+            font-size: 0.8rem;
+            color: #8e8e93;
+            margin-top: 1px;
         }
-        .search-box input {
-            width: 100%;
-            padding: 16px 20px;
-            border: 2px solid #e2e2e7;
-            border-radius: 10px;
-            font-size: 1rem;
-            outline: none;
-            background: #ffffff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        /* Categories Header */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
         }
-        .grid-container {
+        .section-header h2 {
+            font-family: 'Times New Roman', Times, Georgia, serif;
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: #111111;
+        }
+        .view-all-btn {
+            background-color: #111111;
+            color: #ffffff;
+            padding: 7px 18px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        /* Category Image Cards */
+        .image-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            max-width: 500px;
-            margin: 0 auto;
+            gap: 15px;
+            margin-bottom: 40px;
         }
-        .asset-card {
-            background: #ffffff;
-            border: 1px solid #efeff4;
-            border-radius: 12px;
-            padding: 20px;
-            text-align: left;
-            text-decoration: none;
-            color: inherit;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.01);
-            transition: 0.2s;
+        .image-card {
+            position: relative;
+            border-radius: 14px;
+            overflow: hidden;
+            aspect-ratio: 4 / 3;
         }
-        .asset-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.04);
+        .image-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
-        .icon {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-            display: block;
-        }
-        .asset-card h3 {
-            font-size: 1.05rem;
-            font-weight: 600;
-            margin-bottom: 4px;
-            color: #1c1c1e;
-        }
-        .asset-card p {
-            font-size: 0.8rem;
-            color: #6e6e73;
-        }
-        footer {
-            text-align: center;
-            margin-top: 80px;
-            color: #8e8e93;
-            font-size: 0.8rem;
+        .image-overlay {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            color: #ffffff;
+            font-family: 'Times New Roman', Times, Georgia, serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.4);
         }
     </style>
 </head>
 <body>
+    <div class="wrapper">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo"><span class="black">AKSHAY</span> <span class="teal">PRIME</span></div>
+            <div class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
 
-    <div class="navbar">
-        <div class="logo">akshay<span>prime</span></div>
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Free assets for your next video project</h1>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <div class="search-dropdown">Videos</div>
+            <input type="text" class="search-input" placeholder="Search...">
+            <div class="search-icon">🔍</div>
+        </div>
+
+        <!-- Popular Tags -->
+        <div class="popular-tags">
+            Popular: <span>Transitions</span>, Background Videos, Easter
+        </div>
+
+        <!-- Features Grid -->
+        <div class="features-grid">
+            <div class="feature-item">
+                <span class="feature-icon">📹</span>
+                <div class="feature-text">
+                    <h3>Stock Video</h3>
+                    <p>46000+ clips</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🎵</span>
+                <div class="feature-text">
+                    <h3>Stock Music</h3>
+                    <p>1000+ tracks</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🔔</span>
+                <div class="feature-text">
+                    <h3>Sound Effects</h3>
+                    <p>3000+ sounds</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🎬</span>
+                <div class="feature-text">
+                    <h3>Video Templates</h3>
+                    <p>851 templates</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Header -->
+        <div class="section-header">
+            <h2>Popular video categories</h2>
+            <a href="#" class="view-all-btn">View all</a>
+        </div>
+
+        <!-- Image Grid -->
+        <div class="image-grid">
+            <div class="image-card">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80" alt="Nature">
+                <div class="image-overlay">Nature</div>
+            </div>
+            <div class="image-card">
+                <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=400&q=80" alt="Lifestyle">
+                <div class="image-overlay">Lifestyle</div>
+            </div>
+        </div>
     </div>
-
-    <div class="hero">
-        <h1>Free assets for your next video project</h1>
-    </div>
-
-    <div class="search-box">
-        <input type="text" placeholder="Search XML presets, templates, APKs...">
-    </div>
-
-    <div class="grid-container">
-        <a href="#" class="asset-card">
-            <span class="icon">📊</span>
-            <h3>XML Presets</h3>
-            <p>Alight Motion & CapCut</p>
-        </a>
-        <a href="#" class="asset-card">
-            <span class="icon">🎬</span>
-            <h3>Video Templates</h3>
-            <p>Viral overlays & transitions</p>
-        </a>
-        <a href="#" class="asset-card">
-            <span class="icon">🤖</span>
-            <h3>Premium APKs</h3>
-            <p>Safe & updated tools</p>
-        </a>
-        <a href="#" class="asset-card">
-            <span class="icon">🎵</span>
-            <h3>Sound Effects</h3>
-            <p>Trending audio clips</p>
-        </a>
-    </div>
-
-    <footer>
-        <p>© 2026 AKSHAY PRIME. All Rights Reserved.</p>
-    </footer>
-
 </body>
 </html>
